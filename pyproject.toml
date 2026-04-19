@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qomputing"
+version = "0.1.5"
+description = "Quantum computing state vector simulator with linear XEB benchmarking"
+readme = "README.md"
+authors = [
+  { name = "Qomputing Simulator Maintainers" }
+]
+requires-python = ">=3.9"
+dependencies = [
+  "numpy>=1.24,<3.0",
+  "cirq>=1.6,<2.0",
+]
+license = "MIT"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Physics",
+]
+keywords = ["quantum", "simulation", "state vector", "xeb"]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.0",
+]
+build = [
+  "build>=1.0",
+]
+
+[project.scripts]
+qomputing-sim = "qomputing.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
